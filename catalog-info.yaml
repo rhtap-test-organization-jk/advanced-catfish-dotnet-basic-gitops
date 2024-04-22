@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: advanced-catfish-dotnet-basic-gitops
+  description: This is GitOps manifest for advanced-catfish-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: advanced-catfish-dotnet-basic
+    janus-idp.io/tekton: advanced-catfish-dotnet-basic 
+    backstage.io/kubernetes-id: advanced-catfish-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:advanced-catfish-dotnet-basic
